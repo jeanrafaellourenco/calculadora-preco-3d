@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculadora de Preço – Impressão 3D</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="title">
+        <h1>Calculadora de Preço – Impressão 3D</h1>
+        <span class="badge">v1.0</span>
+      </div>
+
+      <div class="card" role="group" aria-labelledby="sec-insumos">
+        <h2 id="sec-insumos" style="font-size:18px;margin:0 0 14px 0">1) Insumos</h2>
+        <div class="grid">
+          <div class="col-6">
+            <label for="precoKg">Preço do filamento (R$/kg)</label>
+            <div class="field">
+              <input id="precoKg" type="number" inputmode="decimal" step="0.01" min="0" placeholder="Ex.: 99,90" aria-describedby="hintKg" value="">
+              <span class="unit">R$/kg</span>
+            </div>
+            <div id="hintKg" class="hint">Quanto você pagou no quilo do filamento.</div>
+          </div>
+          <div class="col-6">
+            <label for="pesoG">Peso da peça (em gramas)</label>
+            <div class="field">
+              <input id="pesoG" type="number" inputmode="decimal" step="0.1" min="0" placeholder="Ex.: 125" aria-describedby="hintG" value="">
+              <span class="unit">g</span>
+            </div>
+            <div id="hintG" class="hint">Peso final do objeto.</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="calcBtn">Calcular</button>
+          <button id="clearBtn" class="secondary">Limpar</button>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px" role="group" aria-labelledby="sec-valores">
+        <h2 id="sec-valores" style="font-size:18px;margin:0 0 14px 0">2) Valores</h2>
+        <div class="grid">
+          <div class="col-12">
+            <div class="result" aria-live="polite">
+              <div>
+                <div class="small">Custo de produção (filamento usado)</div>
+                <strong id="custo">R$ 0,00</strong>
+              </div>
+              <span class="chip">base</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="result">
+              <div>
+                <div class="small">Preço para Varejo (×3)</div>
+                <strong id="varejo">R$ 0,00</strong>
+              </div>
+              <span class="chip">x3</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="result">
+              <div>
+                <div class="small">Preço para Consumidor Final (×5)</div>
+                <strong id="final">R$ 0,00</strong>
+              </div>
+              <span class="chip">x5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <span class="small">* Fórmula: custo = (preço/kg ÷ 1000) × gramas</span>
+        <!-- <a class="ig" href="#" target="_blank" rel="noopener noreferrer">@</a> -->
+      </div>
+    </div>
+
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
